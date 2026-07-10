@@ -1,28 +1,37 @@
-# memos_lite requirements
-# Chạy local trên macOS, không GPU. Backend LLM/embedding mặc định: Ollama.
+# MemOS-Lite requirements
+# Local macOS-friendly setup. Default LLM/embedding backend: Ollama server.
 
 # --- Storage ---
 chromadb>=0.5.0
-# SQLite: dùng sqlite3 built-in của Python, không cần cài thêm
+# SQLite is provided by Python's standard library.
 
-# --- LLM / embedding backend ---
-ollama>=0.3.0
-requests>=2.31.0
+# --- Demo UI ---
+streamlit>=1.30.0
+pandas>=2.2.0
 
-# --- Ingest tài liệu ---
+# --- Document ingestion ---
 python-docx>=1.1.0
 openpyxl>=3.1.0
 
-# --- Tiện ích chung ---
+# --- LLM / embedding backend ---
+# The source code communicates with Ollama through HTTP using Python's standard
+# library. The Ollama desktop/server application must still be installed and run
+# separately. These packages are kept for compatibility and local utilities.
+ollama>=0.3.0
+requests>=2.31.0
+
+# --- General utilities ---
 python-dotenv>=1.0.0
 tqdm>=4.66.0
 pydantic>=2.7.0
 
-# --- Eval ---
-pandas>=2.2.0
+# Optional text repair. ingest.py works without it and falls back safely.
+# ftfy>=6.2.0
 
-# --- (Optional) llama.cpp backend ---
-# llama-cpp-python>=0.2.90  # bật khi hiện thực llamacpp_client.py
-
-# --- Test ---
+# --- Evaluation / development ---
 pytest>=8.0.0
+
+# --- Optional llama.cpp Python binding ---
+# The current LlamaCppClient talks to a running llama.cpp HTTP server, so this is
+# not required unless direct in-process llama.cpp integration is added later.
+# llama-cpp-python>=0.2.90
