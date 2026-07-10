@@ -1,0 +1,28 @@
+# memos_lite requirements
+# Chạy local trên macOS, không GPU. Backend LLM/embedding mặc định: Ollama.
+
+# --- Storage ---
+chromadb>=0.5.0
+# SQLite: dùng sqlite3 built-in của Python, không cần cài thêm
+
+# --- LLM / embedding backend ---
+ollama>=0.3.0
+requests>=2.31.0
+
+# --- Ingest tài liệu ---
+python-docx>=1.1.0
+openpyxl>=3.1.0
+
+# --- Tiện ích chung ---
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+pydantic>=2.7.0
+
+# --- Eval ---
+pandas>=2.2.0
+
+# --- (Optional) llama.cpp backend ---
+# llama-cpp-python>=0.2.90  # bật khi hiện thực llamacpp_client.py
+
+# --- Test ---
+pytest>=8.0.0

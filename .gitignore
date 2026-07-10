@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.memos_lite_data/
+*.sqlite3
+chroma_memos/
+chroma_baseline/
+report.csv
+.pytest_cache/
+.DS_Store
+datasets_eval
